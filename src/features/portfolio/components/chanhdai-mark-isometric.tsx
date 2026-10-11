@@ -22,10 +22,11 @@ const transition: Transition = {
 }
 
 /**
- * 3D Isometric "0x" Architectural Sculpture (Pure Monochrome CAD Schematic)
- * Features a giant, towering hollow "0" loop in the upper quadrant and an interlocking,
- * sweeping angled "x" bracket wrapping tightly along the lower-left diagonal axis.
- * Retains compact staggered composition, metallic white spotlight, and spring bounce physics.
+ * 3D Isometric "0x" Architectural Sculpture (Pure CAD Blueprint Schematic)
+ * - Giant, towering curved stadium "0" with deep central negative-space cutout.
+ * - Authentic 3D isometric "x" cross nestled directly into the lower-right flank of the "0".
+ * - Staggered compact diagonal cascade along the 30° CAD axis (not spread wide horizontally).
+ * - Pure monochrome zinc palette with metallic white cursor spotlight and spring bounce physics.
  */
 export function ChanhDaiMarkIsometric() {
   const id = useId()
@@ -99,7 +100,7 @@ export function ChanhDaiMarkIsometric() {
           />
         </pattern>
 
-        {/* 3D Isometric Top Faces: Giant '0' Loop + Wrapped Stepped 'x' Cradle */}
+        {/* 3D Isometric Top Faces: Giant Curved '0' + Compact Interlocking 'x' */}
         <motion.g
           id={ids.faceFill}
           variants={{
@@ -107,17 +108,13 @@ export function ChanhDaiMarkIsometric() {
             pressed: { y: 16 },
           }}
           transition={transition}
+          fillRule="evenodd"
+          clipRule="evenodd"
         >
-          {/* Lower Wrapped 'x' Cradle - Stepped Base Tier 1 */}
-          <path d="M333.05 256.58L222.20 320.58L166.78 288.58L277.63 224.58L333.05 256.58Z" />
-          {/* THE GIANT HOLLOW '0' RING (Towering Upper-Center Monolith) */}
-          <path d="M388.48 32.58L277.63 96.58L388.48 160.58L499.33 96.58L554.76 128.58L388.48 224.58L166.78 96.58L333.05 0.58L388.48 32.58Z" />
-          {/* Lower Wrapped 'x' Cradle - Curved Step Tier 2 */}
-          <path d="M166.78 288.58L111.35 320.58L0.50 256.58L55.93 224.58L166.78 288.58Z" />
-          {/* Upper Right Corner Bevel of '0' */}
-          <path d="M554.76 64.58L499.33 96.58L388.48 32.58L443.90 0.58L554.76 64.58Z" />
-          {/* Lower Wrapped 'x' Cradle - Ascending Wing Tier 3 */}
-          <path d="M166.78 160.58L55.93 224.58L0.50 192.58L111.35 128.58L166.78 160.58Z" />
+          {/* Giant Curved Stadium '0' with Deep Hollow Cutout */}
+          <path d="M 138 48 Q 166.8 32 195 48 L 260 105 Q 277.6 128.6 260 150 L 195 240 Q 166.8 256.6 138 240 L 72 185 Q 55.9 160.6 72 140 Z M 150 80 Q 166.8 70 182 80 L 218 115 Q 226 128.6 218 140 L 182 180 Q 166.8 190 150 180 L 116 145 Q 108 128.6 116 115 Z" />
+          {/* Authentic 3D Isometric 'x' Cross Nested Beside the '0' */}
+          <path d="M 270 135 L 310 105 L 360 155 L 410 105 L 450 135 L 395 190 L 450 245 L 410 275 L 360 225 L 310 275 L 270 245 L 325 190 Z" />
         </motion.g>
 
         {/* Precision 1px Technical Wireframe Stroke Edges */}
@@ -126,44 +123,39 @@ export function ChanhDaiMarkIsometric() {
           variants={{
             normal: {
               d: [
-                // Lower Wrapped 'x' Cradle (Curved & Stepped)
-                "M28.21 240.58 L0.50 224.58 V192.58 L111.35 128.58 L166.78 160.58 V192.58 L83.64 240.58",
-                "M166.78 160.58 L0.50 256.58 V288.58 L111.35 352.58 L166.78 320.58 L222.20 352.58 L333.05 288.58 V256.58 L277.63 224.58 L166.78 288.58 L0.50 192.58",
-                "M0.50 256.58 L111.35 320.58 L166.78 288.58 L222.20 320.58 L333.05 256.58",
-                "M111.35 320.58 V352.58",
-                "M166.78 288.58 V320.58",
-                "M222.20 320.58 V352.58",
-                // Crossing Isometric 'x' Internal Ribs
-                "M55.93 224.58 L222.20 320.58",
-                "M111.35 352.58 L277.63 224.58",
-                // Giant Towering '0' Outer Ring and Deep Hollow Window
-                "M499.33 96.58 L554.76 128.58 V160.58 L388.48 256.58 L166.78 128.58 V96.58 L333.05 0.58 L499.33 96.58",
-                "M166.78 96.58 L388.48 224.58 L554.76 128.58",
-                "M527.04 112.58 L554.76 96.58 V64.58 L443.90 0.58 L277.63 96.58 L388.48 160.58 L554.76 64.58",
-                "M305.34 112.58 L388.48 64.58 L471.62 112.58",
-                "M388.48 224.58 V256.58",
-                "M388.48 32.58 V64.58",
-              ].join(""),
+                // '0' Outer Curved Perimeter & Inner Hole
+                "M 138 48 Q 166.8 32 195 48 L 260 105 Q 277.6 128.6 260 150 L 195 240 Q 166.8 256.6 138 240 L 72 185 Q 55.9 160.6 72 140 Z",
+                "M 150 80 Q 166.8 70 182 80 L 218 115 Q 226 128.6 218 140 L 182 180 Q 166.8 190 150 180 L 116 145 Q 108 128.6 116 115 Z",
+                // '0' Vertical Corner Drops & Curved Bottom Wireframes
+                "M 72 185 V 217",
+                "M 195 240 V 272",
+                "M 260 150 V 182",
+                "M 72 217 L 138 272 Q 166.8 288.6 195 272 L 260 182",
+                "M 116 145 V 177 L 150 212 V 180",
+                // 'x' 12 Outer Edges
+                "M 270 135 L 310 105 L 360 155 L 410 105 L 450 135 L 395 190 L 450 245 L 410 275 L 360 225 L 310 275 L 270 245 L 325 190 Z",
+                // 'x' Vertical Drops & Bottom Wireframes
+                "M 270 245 V 277 L 310 307 V 275 L 360 257 V 225 L 410 307 V 275 L 450 277 V 245 L 395 222 V 190",
+                "M 310 307 L 360 257 L 410 307",
+                "M 450 135 V 167 L 395 222",
+              ].join(" "),
             },
             pressed: {
               d: [
-                // Lower Wrapped 'x' Cradle (Pressed)
-                "M42.07 248.58 L0.50 224.58 V208.58 L111.35 144.58 L166.78 176.58 V192.58 L69.78 248.58",
-                "M166.78 176.58 L0.5 272.58 V288.58 L111.35 352.58 L166.78 320.58 L222.20 352.58 L333.05 288.58 V272.58 L277.63 240.58 L166.78 304.58 L0.5 208.58",
-                "M0.5 272.58 L111.35 336.58 L166.78 304.58 L222.20 336.58 L333.05 272.58",
-                "M111.35 336.58 V352.58",
-                "M166.78 304.58 V320.58",
-                "M222.20 336.58 V352.58",
-                "M55.93 240.58 L222.20 336.58",
-                "M111.35 352.58 L277.63 240.58",
-                // Giant Towering '0' (Pressed)
-                "M499.33 112.58 L554.76 144.58 V160.58 L388.48 256.58 L166.78 128.58 V112.58 L333.05 16.58 L499.33 112.58",
-                "M166.78 112.58 L388.48 240.58 L554.76 144.58",
-                "M513.19 120.58 L554.76 96.58 V80.58 L443.90 16.58 L277.63 112.58 L388.48 176.58 L554.76 80.58",
-                "M291.48 120.58 L388.48 64.58 L485.47 120.58",
-                "M388.48 240.58 V256.58",
-                "M388.48 48.58 V64.58",
-              ].join(""),
+                // '0' (Pressed)
+                "M 138 64 Q 166.8 48 195 64 L 260 121 Q 277.6 144.6 260 166 L 195 256 Q 166.8 272.6 138 256 L 72 201 Q 55.9 176.6 72 156 Z",
+                "M 150 96 Q 166.8 86 182 96 L 218 131 Q 226 144.6 218 156 L 182 196 Q 166.8 206 150 196 L 116 161 Q 108 144.6 116 131 Z",
+                "M 72 201 V 217",
+                "M 195 256 V 272",
+                "M 260 166 V 182",
+                "M 72 217 L 138 272 Q 166.8 288.6 195 272 L 260 182",
+                "M 116 161 V 177 L 150 212 V 196",
+                // 'x' (Pressed)
+                "M 270 151 L 310 121 L 360 171 L 410 121 L 450 151 L 395 206 L 450 261 L 410 291 L 360 241 L 310 291 L 270 261 L 325 206 Z",
+                "M 270 261 V 277 L 310 307 V 291 L 360 257 V 241 L 410 307 V 291 L 450 277 V 261 L 395 222 V 206",
+                "M 310 307 L 360 257 L 410 307",
+                "M 450 151 V 167 L 395 222",
+              ].join(" "),
             },
           }}
           transition={transition}
@@ -174,7 +166,7 @@ export function ChanhDaiMarkIsometric() {
           id={ids.radialGradient}
           cx={cx}
           cy={cy}
-          r="200"
+          r="210"
           gradientUnits="userSpaceOnUse"
         >
           <stop
@@ -190,7 +182,7 @@ export function ChanhDaiMarkIsometric() {
         </motion.radialGradient>
       </defs>
 
-      {/* Dashed Architectural Projection / Vanishing Guideline Axes */}
+      {/* Dashed Architectural Projection Construction Axes */}
       <g className="stroke-line" strokeWidth="1" strokeDasharray="4 2">
         <path d="M-477.55 756.57L1254.51 -243.41" />
         <path d="M977.37 788.58L-754.67 -211.42" />
@@ -199,13 +191,14 @@ export function ChanhDaiMarkIsometric() {
 
       {/* Solid Vertical Wall Facets (True CAD Matte Shading) */}
       <g className="fill-background" fillRule="evenodd" clipRule="evenodd">
+        {/* '0' Extrusion Walls */}
         <motion.path
           variants={{
             normal: {
-              d: "M166.78 160.58L55.93 224.58L0.50 192.58V224.58L55.93 256.58L166.78 192.58V160.58Z",
+              d: "M 72 140 L 72 185 L 138 240 Q 166.8 256.6 195 240 L 260 150 V 182 L 195 272 Q 166.8 288.6 138 272 L 72 217 Z",
             },
             pressed: {
-              d: "M166.78 176.58L55.93 240.58L0.50 208.58V224.58L55.93 256.58L166.78 192.58V176.58Z",
+              d: "M 72 156 L 72 201 L 138 256 Q 166.8 272.6 195 256 L 260 166 V 182 L 195 272 Q 166.8 288.6 138 272 L 72 217 Z",
             },
           }}
           transition={transition}
@@ -213,10 +206,23 @@ export function ChanhDaiMarkIsometric() {
         <motion.path
           variants={{
             normal: {
-              d: "M166.78 288.58L111.35 320.58L0.50 256.58V288.58L111.35 352.58L166.78 320.58L222.20 352.58L333.05 288.58V256.58L222.20 320.58L166.78 288.58Z",
+              d: "M 116 115 Q 108 128.6 116 145 L 150 180 V 212 L 116 177 Q 108 160.6 116 145 Z",
             },
             pressed: {
-              d: "M166.78 304.58L111.35 336.58L0.50 272.58V288.58L111.35 352.58L166.78 320.58L222.20 352.58L333.05 288.58V272.58L222.20 336.58L166.78 304.58Z",
+              d: "M 116 131 Q 108 144.6 116 161 L 150 196 V 212 L 116 177 Q 108 160.6 116 145 Z",
+            },
+          }}
+          transition={transition}
+        />
+
+        {/* 'x' Extrusion Walls */}
+        <motion.path
+          variants={{
+            normal: {
+              d: "M 270 245 L 310 275 V 307 L 270 277 Z",
+            },
+            pressed: {
+              d: "M 270 261 L 310 291 V 307 L 270 277 Z",
             },
           }}
           transition={transition}
@@ -224,10 +230,10 @@ export function ChanhDaiMarkIsometric() {
         <motion.path
           variants={{
             normal: {
-              d: "M388.48 224.58L166.78 96.58V128.58L388.48 256.58L554.76 160.58V128.58L388.48 224.58Z",
+              d: "M 310 275 L 360 225 V 257 L 310 307 Z",
             },
             pressed: {
-              d: "M388.48 240.58L166.78 112.58V128.58L388.48 256.58L554.76 160.58V144.58L388.48 240.58Z",
+              d: "M 310 291 L 360 241 V 257 L 310 307 Z",
             },
           }}
           transition={transition}
@@ -235,10 +241,43 @@ export function ChanhDaiMarkIsometric() {
         <motion.path
           variants={{
             normal: {
-              d: "M388.48 32.58L277.63 96.58V128.58L388.48 64.58L499.33 128.58L554.75 96.58V64.58L499.33 96.58L388.48 32.58Z",
+              d: "M 360 225 L 410 275 V 307 L 360 257 Z",
             },
             pressed: {
-              d: "M388.48 48.58L277.63 112.58V128.58L388.48 64.58L499.33 128.58L554.75 96.58V80.58L499.33 112.58L388.48 48.58Z",
+              d: "M 360 241 L 410 291 V 307 L 360 257 Z",
+            },
+          }}
+          transition={transition}
+        />
+        <motion.path
+          variants={{
+            normal: {
+              d: "M 410 275 L 450 245 V 277 L 410 307 Z",
+            },
+            pressed: {
+              d: "M 410 291 L 450 261 V 277 L 410 307 Z",
+            },
+          }}
+          transition={transition}
+        />
+        <motion.path
+          variants={{
+            normal: {
+              d: "M 450 245 L 395 190 V 222 L 450 277 Z",
+            },
+            pressed: {
+              d: "M 450 261 L 395 206 V 222 L 450 277 Z",
+            },
+          }}
+          transition={transition}
+        />
+        <motion.path
+          variants={{
+            normal: {
+              d: "M 450 135 L 395 190 V 222 L 450 167 Z",
+            },
+            pressed: {
+              d: "M 450 151 L 395 206 V 222 L 450 167 Z",
             },
           }}
           transition={transition}
@@ -249,7 +288,7 @@ export function ChanhDaiMarkIsometric() {
       <use href={`#${ids.faceFill}`} className="fill-background" />
       <use href={`#${ids.faceFill}`} fill={`url(#${ids.facePattern})`} />
 
-      {/* Crisp Technical Wireframe Edges (Base Gray + Dynamic Metallic White Spotlight) */}
+      {/* Crisp 1px Technical Wireframe Edges (Base Gray + Dynamic Metallic White Spotlight) */}
       <use href={`#${ids.stroke}`} stroke="var(--stroke)" strokeWidth="1" />
       <use
         href={`#${ids.stroke}`}

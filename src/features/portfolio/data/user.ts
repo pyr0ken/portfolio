@@ -2,8 +2,8 @@ import type { User } from "@/features/portfolio/types/user"
 
 export const USER: User = {
   firstName: "Mohammad Hossein",
-  lastName: "Yaghobi",
-  displayName: "Mohammad Hossein Yaghobi",
+  lastName: "Yaghoubi",
+  displayName: "Mohammad Hossein Yaghoubi",
   username: "pyr0ken",
   gender: "male",
   pronouns: "he/him",
@@ -50,7 +50,7 @@ export const USER: User = {
   timeZone: "Asia/Tehran",
   keywords: [
     "pyr0ken",
-    "Mohammad Hossein Yaghobi",
+    "Mohammad Hossein Yaghoubi",
     "محمدحسین یعقوبی",
     "Backend Engineer",
     "DevOps",

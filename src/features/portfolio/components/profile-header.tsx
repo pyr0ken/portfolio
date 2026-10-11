@@ -1,3 +1,8 @@
+"use client"
+
+import { useState } from "react"
+
+import { ShimmeringText } from "@/registry/components/shimmering-text"
 import { USER } from "@/features/portfolio/data/user"
 
 import { FlipSentences } from "./flip-sentences"
@@ -5,6 +10,8 @@ import { PronounceMyName } from "./pronounce-my-name"
 import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <div className="screen-line-bottom grid grid-cols-[auto_1fr] overflow-y-clip border-x screen-line-bottom-border after:z-1">
       <div className="flex flex-col border-r border-line">
@@ -26,12 +33,24 @@ export function ProfileHeader() {
       </div>
 
       <div className="flex flex-col justify-between">
-        <div className="flex h-full items-center gap-2 p-4 sm:px-6">
-          <h1 className="text-2xl font-medium tracking-tight sm:text-[2rem]/none">
-            {USER.displayName}
+        <div
+          className="group flex h-full cursor-pointer items-center gap-2 p-4 select-none sm:px-6"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <h1 className="text-2xl font-medium tracking-tight transition-transform duration-200 group-hover:scale-[1.01] sm:text-[2rem]/none">
+            <ShimmeringText
+              text={USER.displayName}
+              isStopped={!isHovered}
+              duration={0.8}
+              className="[--color:var(--foreground)] [--shimmering-color:#ffffff] dark:[--shimmering-color:#f4f4f5]"
+            />
           </h1>
 
-          <VerifiedIcon className="size-4.5 shrink-0 select-none" aria-hidden />
+          <VerifiedIcon
+            className="size-4.5 shrink-0 transition-transform duration-300 select-none group-hover:scale-125 group-hover:text-sky-400"
+            aria-hidden
+          />
 
           {USER.namePronunciationUrl && (
             <PronounceMyName namePronunciationUrl={USER.namePronunciationUrl} />

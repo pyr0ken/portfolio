@@ -1,65 +1,62 @@
 import type { User } from "@/features/portfolio/types/user"
 
 export const USER: User = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Mohammad Hossein",
+  lastName: "Yaghobi",
+  displayName: "Mohammad Hossein Yaghobi",
+  username: "pyr0ken",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "Architecting high-concurrency RESTful microservices, zero-copy network gateways, automated Kubernetes/Docker pipelines, and offline cryptography.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer.",
-    "Open source contributor.",
-    "I own a vintage iPhone.",
+    "Backend & DevOps Software Engineer.",
+    "Systems & Infrastructure Architect.",
+    "Silver Medalist — National Innovation Award.",
+    "Kharazmi Computer Engineering.",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumberB64: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  emailB64: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
+  address: "Tehran, Iran",
+  phoneNumberB64: "Kzk4OTM2OTAzNzc3OA==", // E.164 format, base64 encoded
+  emailB64: "bW1kaG9zZWluLnlhZ2hvdWJpQGdtYWlsLmNvbQ==", // base64 encoded
+  website: "https://pyr0ken.ir",
+  jobTitle: "Backend & DevOps Software Engineer",
   jobs: [
     {
-      title: "Design Engineer",
-      company: "shadcncraft",
-      website: "https://shadcncraft.com?atp=ncdai",
-      experienceId: "shadcncraft",
+      title: "Backend & DevOps Software Engineer",
+      company: "MehrsunAi",
+      website: "https://mehrsunai.com",
+      experienceId: "mehrsunai",
     },
     {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-      experienceId: "quaric",
+      title: "Backend Developer",
+      company: "Chabahar Maritime University",
+      website: "https://cmu.ac.ir",
+      experienceId: "cmu",
     },
   ],
-  about: `- I’m Chánh Đại (call me Dai) — a Design Engineer with 5+ years of experience, known for pixel-perfect execution and an obsessive attention to detail.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted projects.
-- Creator of [chanhdai.com](https://github.com/ncdai/chanhdai.com) (2.2k stars), [React Wheel Picker](https://react-wheel-picker.chanhdai.com) (50k+ weekly downloads, ▲ Vercel OSS Program), and [ZaDark](https://zadark.com) (80k+ downloads, 30k+ users) — peak metrics.
-`,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  avatarSketch: "https://assets.chanhdai.com/images/avatar-sketch.webp",
+  about: `- Systems & DevOps Software Engineer specializing in high-concurrency microservices, automated Kubernetes/Docker pipelines, zero-copy network gateways, and offline cryptography.
+- Undergraduate in Computer Engineering at Kharazmi University, Tehran, Iran.
+- Silver Medalist in the National Innovation Award (Computer Science).
+- Creator of [Oxiroute](https://github.com/pyr0ken/oxiroute) (High-performance Rust AI Gateway, <10MB RSS) and [Khales](https://github.com/pyr0ken/khales) (100% offline privacy PFM with SQLCipher AES-256).`,
+  avatar: "https://avatars.githubusercontent.com/u/126270229?v=4",
+  avatarSketch: "https://avatars.githubusercontent.com/u/126270229?v=4",
   avatarVariants: {
-    lightOff: "https://assets.chanhdai.com/images/avatar-light-off.webp",
-    lightOn: "https://assets.chanhdai.com/images/avatar-light-on.webp",
-    darkOff: "https://assets.chanhdai.com/images/avatar-dark-off.webp",
-    darkOn: "https://assets.chanhdai.com/images/avatar-dark-on.webp",
+    lightOff: "https://avatars.githubusercontent.com/u/126270229?v=4",
+    lightOn: "https://avatars.githubusercontent.com/u/126270229?v=4",
+    darkOff: "https://avatars.githubusercontent.com/u/126270229?v=4",
+    darkOn: "https://avatars.githubusercontent.com/u/126270229?v=4",
   },
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?t=1778602757",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+  ogImage: "https://avatars.githubusercontent.com/u/126270229?v=4",
+  namePronunciationUrl: "",
+  timeZone: "Asia/Tehran",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "pyr0ken",
+    "Mohammad Hossein Yaghobi",
+    "محمدحسین یعقوبی",
+    "Backend Engineer",
+    "DevOps",
+    "Rust",
+    "Kubernetes",
+    "MehrsunAi",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2024-01-01",
 }

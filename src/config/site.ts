@@ -24,24 +24,24 @@ export const META_THEME_COLORS = {
 
 export const MAIN_NAV: NavItem<Route>[] = [
   {
-    title: "Components",
-    href: "/components",
+    title: "Experience",
+    href: "/#experience" as Route,
   },
   {
-    title: "Blocks",
-    href: "/blocks",
+    title: "Projects",
+    href: "/#projects" as Route,
   },
   {
-    title: "Craft",
-    href: "/craft",
+    title: "Stack",
+    href: "/#stack" as Route,
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Honors",
+    href: "/#recognition" as Route,
   },
   {
-    title: "Sponsors",
-    href: "/sponsors",
+    title: "Education",
+    href: "/#education" as Route,
   },
 ]
 
@@ -58,7 +58,7 @@ export const GITHUB_USERNAME = SOCIAL.github.handle
 export const SOURCE_CODE_GITHUB_REPO = "pyr0ken/portfolio"
 export const SOURCE_CODE_GITHUB_URL = "https://github.com/pyr0ken/portfolio"
 
-export const SPONSORSHIP_URL = "https://github.com/sponsors/pyr0ken"
+export const SPONSORSHIP_URL = "https://github.com/pyr0ken"
 
 export const UTM_PARAMS = {
   utm_source: "pyr0ken.ir",

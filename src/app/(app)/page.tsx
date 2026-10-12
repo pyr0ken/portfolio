@@ -1,4 +1,3 @@
-import { Suspense } from "react"
 import type { Metadata } from "next"
 import type { ProfilePage, WithContext } from "schema-dts"
 
@@ -7,26 +6,16 @@ import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { FloatingCarbonAds } from "@/components/floating-carbon-ads"
-import { Blocks } from "@/features/portfolio/components/blocks"
-import { Blog } from "@/features/portfolio/components/blog"
-import { Components } from "@/features/portfolio/components/components"
 import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
 import { GitHubContributions } from "@/features/portfolio/components/github-contributions"
 import { Hello } from "@/features/portfolio/components/hello"
-import {
-  Insights,
-  InsightsSkeleton,
-} from "@/features/portfolio/components/insights"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
 import { Projects } from "@/features/portfolio/components/projects"
 import { Recognition } from "@/features/portfolio/components/recognition"
 import { SocialLinks } from "@/features/portfolio/components/social-links"
-import { Sponsors } from "@/features/portfolio/components/sponsors"
-import { SponsorsCarousel } from "@/features/portfolio/components/sponsors-carousel"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
-import { Testimonials } from "@/features/portfolio/components/testimonials"
 import { USER } from "@/features/portfolio/data/user"
 
 export const metadata: Metadata = {
@@ -52,40 +41,21 @@ export default function HomePage() {
           <Separator />
 
           <Hello />
-          <SponsorsCarousel />
-          <Testimonials />
-          <Separator />
-
-          <Components />
-          <Separator />
-
-          <Blocks />
-          <Separator />
-
-          <Blog />
-          <Separator />
-
-          <TechStack />
           <Separator />
 
           <Experiences />
           <Separator />
 
-          <Education />
+          <Projects />
           <Separator />
 
-          <Projects />
+          <TechStack />
           <Separator />
 
           <Recognition />
           <Separator />
 
-          <Suspense fallback={<InsightsSkeleton />}>
-            <Insights />
-          </Suspense>
-          <Separator />
-
-          <Sponsors />
+          <Education />
         </div>
       </div>
     </>
@@ -112,15 +82,6 @@ function Separator({ className }: { className?: string }) {
         "stripe-divider h-(--separator-height) w-full border-x",
         className
       )}
-    >
-      {/* <div
-        className="absolute -top-1.25 -left-1.25 z-2 flex size-2.25 border bg-background"
-        aria-hidden
-      />
-      <div
-        className="absolute -top-1.25 -right-1.25 z-2 flex size-2.25 border bg-background"
-        aria-hidden
-      /> */}
-    </div>
+    />
   )
 }

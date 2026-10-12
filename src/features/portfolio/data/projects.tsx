@@ -1,158 +1,152 @@
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
 import {
-  QuaricIcon,
-  ReactWheelPickerIcon,
-  ZaDarkIcon,
-} from "@/components/icons"
+  BoxIcon,
+  CalendarCheckIcon,
+  CpuIcon,
+  GraduationCapIcon,
+  ShieldCheckIcon,
+  ShoppingCartIcon,
+} from "lucide-react"
 
 import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
-    id: "react-wheel-picker",
-    title: "React Wheel Picker",
+    id: "oxiroute",
+    title: "Oxiroute",
     period: {
-      start: "05.2025",
+      start: "2025",
     },
-    link: "https://react-wheel-picker.chanhdai.com",
+    link: "https://github.com/pyr0ken/oxiroute",
     skills: [
-      "Open Source",
-      "React",
-      "TypeScript",
-      "Monorepo",
-      "Turborepo",
-      "pnpm-workspace",
-      "Package Publishing",
-      "NPM Registry",
-      "GitHub Actions",
+      "Rust",
+      "Axum",
+      "SSE Streaming",
+      "Ratatui TUI",
+      "SOCKS5 Proxy",
+      "Resilience",
+      "High Performance",
     ],
-    description: `iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. / Backed by [▲ Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
-- Natural touch scrolling with smooth inertia, mouse drag and scroll for desktop
-- Infinite loop scrolling
-- Unstyled core for complete style customization
-- Full keyboard navigation and type-ahead search
-`,
-    icon: <ReactWheelPickerIcon />,
+    description: `High-performance, ultra-lightweight AI gateway & LLM router built in pure Rust.
+- Ultra-low memory footprint (<10MB RSS) with zero-cost abstractions
+- Real-time Server-Sent Events (SSE) streaming engine powered by Axum
+- Interactive terminal UI (Ratatui) with live throughput metrics and traffic logs
+- 3-tier fallback resilience, retry strategies, and intelligent token compaction`,
+    icon: <CpuIcon className="size-4" />,
     isExpanded: true,
   },
   {
-    id: "chanhdaidotcom",
-    title: "chanhdai.com",
+    id: "interactive-3d-lab",
+    title: "Interactive 3D Laboratory",
     period: {
-      start: "01.2025",
+      start: "2024",
+      end: "2025",
     },
-    link: "https://github.com/ncdai/chanhdai.com",
+    link: "https://pyr0ken.ir/#projects",
     skills: [
-      "Open Source",
-      "Next.js 16",
-      "Tailwind CSS v4",
-      "Radix UI",
-      "Base UI",
-      "Motion",
-      "shadcn/ui",
-      "shadcn registry",
-      "Vercel",
+      "Three.js",
+      "React Three Fiber",
+      "Computer Vision",
+      "LLMs",
+      "FastAPI",
+      "Python",
+      "3D Graphics",
     ],
-    description: "A pixel-perfect dev portfolio and shadcn registry.",
-    icon: <ChanhDaiMark />,
+    description: `Interactive web-based 3D environment for asset visualization, segmentation, and AI integration.
+- Upload, render, and edit 3D models with WebGL and React Three Fiber
+- Deep learning-driven 3D model segmentation and visual inspection
+- Integrated AI capabilities leveraging Computer Vision pipelines and Large Language Models
+- Real-time virtual collaborative presentation and review sessions`,
+    icon: <BoxIcon className="size-4" />,
+    isExpanded: true,
   },
   {
-    id: "quaricdotcom",
-    title: "quaric.com",
+    id: "online-reservation-system",
+    title: "Online Reservation & CRM Platform",
     period: {
-      start: "03.2024",
-      end: "07.2025",
+      start: "2023",
+      end: "2024",
     },
-    link: "https://quaric.com",
+    link: "https://pyr0ken.ir/#projects",
     skills: [
-      "Company Project",
-      "Next.js 15",
-      "Tailwind CSS v3",
-      "shadcn/ui",
-      "Strapi 5",
-      "VNPAY-QR",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Transactions",
+      "Redis",
+      "Payment Webhooks",
       "Docker",
-      "Docker Compose",
-      "NGINX",
     ],
-    icon: <QuaricIcon />,
+    description: `High-concurrency booking and customer relationship management platform.
+- Implemented strict PostgreSQL transaction isolation to eliminate double-booking hazards
+- Automated subscription scheduling, calendar synchronization, and member ticketing
+- Integrated multi-currency payment gateways with webhook reconciliation
+- Administrative analytics dashboard with real-time occupancy metrics and audit trails`,
+    icon: <CalendarCheckIcon className="size-4" />,
   },
   {
-    id: "zadark",
-    title: "ZaDark",
+    id: "khales",
+    title: "Khales PFM",
     period: {
-      start: "01.2022",
+      start: "2024",
     },
-    link: "https://zadark.com",
+    link: "https://github.com/pyr0ken/khales",
     skills: [
-      "Pet Project",
-      "Open Source",
-      "Browser Extension",
-      "CLI",
-      "Docusaurus 3",
+      "Kotlin",
+      "Jetpack Compose M3",
+      "Room",
+      "SQLCipher",
+      "AES-256",
+      "Android",
+      "Privacy First",
     ],
-    description: `ZaDark adds Dark Mode, anti-peeking, customizable fonts, backgrounds, and more to Zalo Web and PC.
-- Earned 10M+ VND in net sales from a paid Safari Extension*
-- 80k+ downloads on SourceForge* (awarded Community Leader badge by SourceForge)
-- 30k+ active users via Chrome Web Store*
-- Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-
-<p class="text-muted-foreground">* Peak metrics.</p>
-`,
-    icon: <ZaDarkIcon />,
+    description: `100% offline, privacy-focused personal finance manager for Android.
+- Zero network permissions; all data stays strictly on the physical device
+- Encrypted local database utilizing SQLCipher with AES-256 encryption
+- Regex-driven Iranian banking SMS transaction parser for automatic expense logging
+- Modern UI crafted with Jetpack Compose Material 3 and dynamic financial telemetry`,
+    icon: <ShieldCheckIcon className="size-4" />,
   },
   {
-    id: "penphy",
-    title: "Penphy",
+    id: "e-commerce-platform",
+    title: "E-Commerce Microservices",
     period: {
-      start: "01.2019",
-      end: "08.2019",
+      start: "2023",
     },
-    link: "https://www.youtube.com/watch?v=EdU7rUO-UA4",
-    skills: ["Startup Project", "JavaScript", "React Native"],
-    description: "2nd Prize — Business Startup Competition 2019",
-  },
-  {
-    id: "unlimitedstudy",
-    title: "UnlimitedStudy",
-    period: {
-      start: "01.2017",
-      end: "08.2018",
-    },
-    link: "https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm",
+    link: "https://pyr0ken.ir/#projects",
     skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-      "jQuery",
-      "Bootstrap 3",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "RabbitMQ",
+      "Docker",
     ],
-    description: `UnlimitedStudy is a website that provides teaching and learning support tools for teachers and students.
-- 3rd Prize — National Science and Engineering Fair 2018 (ViSEF)
-- 3rd Prize — National Young Informatics Contest 2018
-- Reached 7k+ users, mainly high school students in Can Tho City
-- Pilot implemented in high schools across Can Tho City with English quizzes, supervised by English subject specialists from the Can Tho City Department of Education and Training`,
+    description: `Scalable online retail engine featuring distributed order orchestration.
+- Real-time inventory synchronization and atomic shopping cart state management
+- Multi-facet search, categorization, and filtering optimized with Redis caching
+- Asynchronous checkout processing with Celery task queues and RabbitMQ brokers
+- Dynamic rule-based promotion, coupon, and tiered discount pricing engines`,
+    icon: <ShoppingCartIcon className="size-4" />,
   },
   {
-    id: "study-english",
-    title: "Study English",
+    id: "vahedyar",
+    title: "Vahedyar — Course Planner",
     period: {
-      start: "11.2016",
-      end: "12.2017",
+      start: "2024",
     },
-    link: "https://www.youtube.com/watch?v=OYgugvjqU4A",
+    link: "https://vahedyar.vercel.app",
     skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
+      "Python",
+      "FastAPI",
+      "SQLite FTS5",
+      "Typer CLI",
+      "Vercel",
+      "Automation",
     ],
-    description: `Study English is a free, mobile-friendly website for high school English learning, offering vocabulary, quizzes, listening practice, and more.
-- Consolation Prize — National Youth and Children’s Creativity Contest 2016
-- 1st Prize — Can Tho City Youth and Children’s Creativity Contest 2016
-- Consolation Prize — Can Tho City Young Informatics Contest 2016`,
+    description: `Zero-backend academic course planning and university portal automation suite.
+- Instant full-text search across thousands of courses using SQLite FTS5
+- High-efficiency Python scraper and Typer CLI client for portal automation
+- Interactive schedule visualizer deployed on Vercel with zero latency`,
+    icon: <GraduationCapIcon className="size-4" />,
   },
 ]

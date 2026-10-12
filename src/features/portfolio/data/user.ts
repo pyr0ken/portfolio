@@ -21,16 +21,16 @@ export const USER: User = {
   jobTitle: "Backend & DevOps Software Engineer",
   jobs: [
     {
-      title: "Backend & DevOps Software Engineer",
+      title: "Software Engineer",
       company: "MehrsunAi",
       website: "https://mehrsunai.com",
       experienceId: "mehrsunai",
     },
     {
       title: "Backend Developer",
-      company: "Chabahar Maritime University",
-      website: "https://cmu.ac.ir",
-      experienceId: "cmu",
+      company: "Ashtanga Yoga Home",
+      website: "https://ashtangayogahome.com",
+      experienceId: "ashtangayogahome",
     },
   ],
   about: `- Systems & DevOps Software Engineer specializing in high-concurrency microservices, automated Kubernetes/Docker pipelines, zero-copy network gateways, and offline cryptography.

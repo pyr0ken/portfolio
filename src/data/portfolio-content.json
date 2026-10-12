@@ -1,0 +1,252 @@
+{
+  "user": {
+    "firstName": "Mohammad Hossein",
+    "lastName": "Yaghoubi",
+    "displayName": "Mohammad Hossein Yaghoubi",
+    "username": "pyr0ken",
+    "jobTitle": "Backend & DevOps Software Engineer",
+    "bio": "Architecting high-concurrency RESTful microservices, zero-copy network gateways, automated Kubernetes/Docker pipelines, and offline cryptography.",
+    "flipSentences": [
+      "Backend & DevOps Software Engineer.",
+      "Systems & Infrastructure Architect.",
+      "Silver Medalist — National Innovation Award.",
+      "Kharazmi Computer Engineering."
+    ],
+    "about": "- Systems & DevOps Software Engineer specializing in high-concurrency microservices, automated Kubernetes/Docker pipelines, zero-copy network gateways, and offline cryptography.\n- Undergraduate in Computer Engineering at Kharazmi University, Tehran, Iran.\n- Silver Medalist in the National Innovation Award (Computer Science) 2025.\n- Creator of [Oxiroute](https://github.com/pyr0ken/oxiroute) (High-performance Rust AI Gateway, <10MB RSS) and [Khales](https://github.com/pyr0ken/khales) (100% offline privacy PFM with SQLCipher AES-256).",
+    "address": "Tehran, Iran"
+  },
+  "experiences": [
+    {
+      "id": "mehrsunai",
+      "companyName": "MehrsunAi",
+      "companyWebsite": "https://mehrsunai.com",
+      "location": "Tehran Province, Iran",
+      "locationType": "Hybrid",
+      "isCurrentEmployer": false,
+      "positions": [
+        {
+          "id": "mehrsunai-se",
+          "title": "Software Engineer",
+          "employmentPeriod": {
+            "start": "09.2025",
+            "end": "09.2026"
+          },
+          "employmentType": "Part-time",
+          "description": "- Built scalable RESTful APIs with JWT/OAuth2 security, handling thousands of concurrent users.\n- Automated deployment using Docker, Kubernetes, and CI/CD (GitLab/GitHub Actions), reducing release time by 40%.\n- Cut API latency by 30% with Redis caching and optimized database queries.\n- Set up monitoring (Prometheus/Grafana) and centralized logging (ELK) to maintain 99.9% uptime.\n- Documented all APIs with Swagger and Postman for seamless team collaboration.",
+          "skills": [
+            "Python",
+            "FastAPI",
+            "Django REST Framework",
+            "Docker",
+            "Kubernetes",
+            "CI/CD",
+            "Redis",
+            "PostgreSQL",
+            "Prometheus",
+            "Grafana",
+            "ELK"
+          ],
+          "isExpanded": true
+        }
+      ]
+    },
+    {
+      "id": "ashtangayogahome",
+      "companyName": "Ashtanga Yoga Home",
+      "companyWebsite": "https://ashtangayogahome.com",
+      "location": "Finland",
+      "locationType": "Remote",
+      "isCurrentEmployer": false,
+      "positions": [
+        {
+          "id": "ashtanga-be",
+          "title": "Backend Developer",
+          "employmentPeriod": {
+            "start": "07.2023",
+            "end": "08.2024"
+          },
+          "employmentType": "Freelance",
+          "description": "- Developed a booking and CRM system using Django Rest Framework (MVC) with class scheduling, user auth, and subscription packages.\n- Integrated secure payment gateways via webhooks and built a ticketing system—prevented double-booking using PostgreSQL transactions.\n- Improved database performance by 25% through indexing, optimized SQL, and caching.\n- Documented all endpoints with Swagger and created onboarding guides for frontend teams.",
+          "skills": [
+            "Python",
+            "Django REST Framework",
+            "PostgreSQL",
+            "Redis",
+            "Webhooks",
+            "SQL",
+            "Transactions",
+            "Swagger"
+          ],
+          "isExpanded": true
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "oxiroute",
+      "title": "Oxiroute",
+      "period": {
+        "start": "2025"
+      },
+      "link": "https://github.com/pyr0ken/oxiroute",
+      "skills": [
+        "Rust",
+        "Axum",
+        "SSE Streaming",
+        "Ratatui TUI",
+        "SOCKS5 Proxy",
+        "Resilience",
+        "High Performance"
+      ],
+      "description": "High-performance, ultra-lightweight AI gateway & LLM router built in pure Rust.\n- Ultra-low memory footprint (<10MB RSS) with zero-cost abstractions\n- Real-time Server-Sent Events (SSE) streaming engine powered by Axum\n- Interactive terminal UI (Ratatui) with live throughput metrics and traffic logs\n- 3-tier fallback resilience, retry strategies, and intelligent token compaction",
+      "isExpanded": true
+    },
+    {
+      "id": "interactive-3d-lab",
+      "title": "Interactive 3D Laboratory",
+      "period": {
+        "start": "2024",
+        "end": "2025"
+      },
+      "link": "https://pyr0ken.ir/#projects",
+      "skills": [
+        "Three.js",
+        "React Three Fiber",
+        "Computer Vision",
+        "LLMs",
+        "FastAPI",
+        "Python",
+        "3D Graphics"
+      ],
+      "description": "Interactive web-based 3D environment for asset visualization, segmentation, and AI integration.\n- Upload, render, and edit 3D models with WebGL and React Three Fiber\n- Deep learning-driven 3D model segmentation and visual inspection\n- Integrated AI capabilities leveraging Computer Vision pipelines and Large Language Models\n- Real-time virtual collaborative presentation and review sessions",
+      "isExpanded": true
+    },
+    {
+      "id": "online-reservation-system",
+      "title": "Online Reservation & CRM Platform",
+      "period": {
+        "start": "2023",
+        "end": "2024"
+      },
+      "link": "https://pyr0ken.ir/#projects",
+      "skills": [
+        "Django REST Framework",
+        "PostgreSQL",
+        "Transactions",
+        "Redis",
+        "Payment Webhooks",
+        "Docker"
+      ],
+      "description": "High-concurrency booking and customer relationship management platform.\n- Implemented strict PostgreSQL transaction isolation to eliminate double-booking hazards\n- Automated subscription scheduling, calendar synchronization, and member ticketing\n- Integrated multi-currency payment gateways with webhook reconciliation\n- Administrative analytics dashboard with real-time occupancy metrics and audit trails",
+      "isExpanded": false
+    },
+    {
+      "id": "khales",
+      "title": "Khales PFM",
+      "period": {
+        "start": "2024"
+      },
+      "link": "https://github.com/pyr0ken/khales",
+      "skills": [
+        "Kotlin",
+        "Jetpack Compose M3",
+        "Room",
+        "SQLCipher",
+        "AES-256",
+        "Android",
+        "Privacy First"
+      ],
+      "description": "100% offline, privacy-focused personal finance manager for Android.\n- Zero network permissions; all data stays strictly on the physical device\n- Encrypted local database utilizing SQLCipher with AES-256 encryption\n- Regex-driven Iranian banking SMS transaction parser for automatic expense logging\n- Modern UI crafted with Jetpack Compose Material 3 and dynamic financial telemetry",
+      "isExpanded": false
+    },
+    {
+      "id": "e-commerce-platform",
+      "title": "E-Commerce Microservices",
+      "period": {
+        "start": "2023"
+      },
+      "link": "https://pyr0ken.ir/#projects",
+      "skills": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "RabbitMQ",
+        "Docker"
+      ],
+      "description": "Scalable online retail engine featuring distributed order orchestration.\n- Real-time inventory synchronization and atomic shopping cart state management\n- Multi-facet search, categorization, and filtering optimized with Redis caching\n- Asynchronous checkout processing with Celery task queues and RabbitMQ brokers\n- Dynamic rule-based promotion, coupon, and tiered discount pricing engines",
+      "isExpanded": false
+    },
+    {
+      "id": "vahedyar",
+      "title": "Vahedyar — Course Planner",
+      "period": {
+        "start": "2024"
+      },
+      "link": "https://vahedyar.vercel.app",
+      "skills": [
+        "Python",
+        "FastAPI",
+        "SQLite FTS5",
+        "Typer CLI",
+        "Vercel",
+        "Automation"
+      ],
+      "description": "Zero-backend academic course planning and university portal automation suite.\n- Instant full-text search across thousands of courses using SQLite FTS5\n- High-efficiency Python scraper and Typer CLI client for portal automation\n- Interactive schedule visualizer deployed on Vercel with zero latency",
+      "isExpanded": false
+    }
+  ],
+  "education": [
+    {
+      "id": "kharazmi",
+      "school": "Kharazmi University",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "fieldOfStudy": "Computer Engineering",
+      "period": {
+        "start": "2022",
+        "end": "2026"
+      },
+      "description": "- Undergraduate student in Computer Engineering at Kharazmi University, Tehran, Iran.\n- In-depth coursework in Distributed Systems, Operating Systems, Computer Networks, and Database Systems.\n- Silver Medalist at the National Innovation Award (Computer Science) 2025.",
+      "skills": [
+        "Operating Systems",
+        "Computer Networks",
+        "Distributed Systems",
+        "Algorithms",
+        "Data Structures",
+        "Database Systems",
+        "Software Engineering"
+      ],
+      "isExpanded": true
+    },
+    {
+      "id": "cmu-teaching",
+      "school": "Chabahar University of Maritime and Marine Sciences",
+      "degree": "Teaching Experience",
+      "fieldOfStudy": "Python Programming Instructor",
+      "period": {
+        "start": "08.2024",
+        "end": "08.2024"
+      },
+      "description": "- Conducted specialized Python programming training sessions for engineering students.\n- Covered algorithmic thinking, data structures, and foundational software engineering methodologies.",
+      "skills": [
+        "Python",
+        "Algorithms",
+        "Data Structures",
+        "Teaching & Mentorship"
+      ],
+      "isExpanded": false
+    }
+  ],
+  "awards": [
+    {
+      "id": "national-innovation-award-2025",
+      "prize": "Silver Medalist",
+      "title": "National Innovation Award (Computer Science)",
+      "date": "2025",
+      "grade": "National",
+      "description": "- Field: Computer Science & Systems Engineering\n- Awarded Silver Medal at the National Innovation Award for excellence in computer engineering and software architecture."
+    }
+  ]
+}

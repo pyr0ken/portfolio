@@ -1,42 +1,28 @@
+import content from "@/data/portfolio-content.json"
+
 import type { User } from "@/features/portfolio/types/user"
 
 export const USER: User = {
-  firstName: "Mohammad Hossein",
-  lastName: "Yaghoubi",
-  displayName: "Mohammad Hossein Yaghoubi",
-  username: "pyr0ken",
+  firstName: content.user.firstName || "Mohammad Hossein",
+  lastName: content.user.lastName || "Yaghoubi",
+  displayName: content.user.displayName || "Mohammad Hossein Yaghoubi",
+  username: content.user.username || "pyr0ken",
   gender: "male",
   pronouns: "he/him",
-  bio: "Architecting high-concurrency RESTful microservices, zero-copy network gateways, automated Kubernetes/Docker pipelines, and offline cryptography.",
-  flipSentences: [
-    "Backend & DevOps Software Engineer.",
-    "Systems & Infrastructure Architect.",
-    "Silver Medalist — National Innovation Award.",
-    "Kharazmi Computer Engineering.",
-  ],
-  address: "Tehran, Iran",
+  bio: content.user.bio,
+  flipSentences: content.user.flipSentences,
+  address: content.user.address,
   phoneNumberB64: "Kzk4OTM2OTAzNzc3OA==", // E.164 format, base64 encoded
   emailB64: "bW1kaG9zZWluLnlhZ2hvdWJpQGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://pyr0ken.ir",
-  jobTitle: "Backend & DevOps Software Engineer",
-  jobs: [
-    {
-      title: "Software Engineer",
-      company: "MehrsunAi",
-      website: "https://mehrsunai.com",
-      experienceId: "mehrsunai",
-    },
-    {
-      title: "Backend Developer",
-      company: "Ashtanga Yoga Home",
-      website: "https://ashtangayogahome.com",
-      experienceId: "ashtangayogahome",
-    },
-  ],
-  about: `- Systems & DevOps Software Engineer specializing in high-concurrency microservices, automated Kubernetes/Docker pipelines, zero-copy network gateways, and offline cryptography.
-- Undergraduate in Computer Engineering at Kharazmi University, Tehran, Iran.
-- Silver Medalist in the National Innovation Award (Computer Science).
-- Creator of [Oxiroute](https://github.com/pyr0ken/oxiroute) (High-performance Rust AI Gateway, <10MB RSS) and [Khales](https://github.com/pyr0ken/khales) (100% offline privacy PFM with SQLCipher AES-256).`,
+  jobTitle: content.user.jobTitle,
+  jobs: content.experiences.map((exp) => ({
+    title: exp.positions[0]?.title || "Engineer",
+    company: exp.companyName,
+    website: exp.companyWebsite,
+    experienceId: exp.id,
+  })),
+  about: content.user.about,
   avatar: "https://avatars.githubusercontent.com/u/126270229?v=4",
   avatarSketch: "https://avatars.githubusercontent.com/u/126270229?v=4",
   avatarVariants: {
@@ -56,7 +42,6 @@ export const USER: User = {
     "DevOps",
     "Rust",
     "Kubernetes",
-    "MehrsunAi",
   ],
   dateCreated: "2024-01-01",
 }

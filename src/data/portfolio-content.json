@@ -84,25 +84,6 @@
   ],
   "projects": [
     {
-      "id": "oxiroute",
-      "title": "Oxiroute",
-      "period": {
-        "start": "2025"
-      },
-      "link": "https://github.com/pyr0ken/oxiroute",
-      "skills": [
-        "Rust",
-        "Axum",
-        "SSE Streaming",
-        "Ratatui TUI",
-        "SOCKS5 Proxy",
-        "Resilience",
-        "High Performance"
-      ],
-      "description": "High-performance, ultra-lightweight AI gateway & LLM router built in pure Rust.\n- Ultra-low memory footprint (<10MB RSS) with zero-cost abstractions\n- Real-time Server-Sent Events (SSE) streaming engine powered by Axum\n- Interactive terminal UI (Ratatui) with live throughput metrics and traffic logs\n- 3-tier fallback resilience, retry strategies, and intelligent token compaction",
-      "isExpanded": true
-    },
-    {
       "id": "interactive-3d-lab",
       "title": "Interactive 3D Laboratory",
       "period": {
@@ -120,6 +101,25 @@
         "3D Graphics"
       ],
       "description": "Interactive web-based 3D environment for asset visualization, segmentation, and AI integration.\n- Upload, render, and edit 3D models with WebGL and React Three Fiber\n- Deep learning-driven 3D model segmentation and visual inspection\n- Integrated AI capabilities leveraging Computer Vision pipelines and Large Language Models\n- Real-time virtual collaborative presentation and review sessions",
+      "isExpanded": true
+    },
+    {
+      "id": "oxiroute",
+      "title": "Oxiroute",
+      "period": {
+        "start": "2025"
+      },
+      "link": "https://github.com/pyr0ken/oxiroute",
+      "skills": [
+        "Rust",
+        "Axum",
+        "SSE Streaming",
+        "Ratatui TUI",
+        "SOCKS5 Proxy",
+        "Resilience",
+        "High Performance"
+      ],
+      "description": "High-performance, ultra-lightweight AI gateway & LLM router built in pure Rust.\n- Ultra-low memory footprint (<10MB RSS) with zero-cost abstractions\n- Real-time Server-Sent Events (SSE) streaming engine powered by Axum\n- Interactive terminal UI (Ratatui) with live throughput metrics and traffic logs\n- 3-tier fallback resilience, retry strategies, and intelligent token compaction",
       "isExpanded": true
     },
     {

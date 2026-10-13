@@ -105,6 +105,12 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     icon: <TextInitialIcon />,
   },
   {
+    title: "Stack",
+    href: "/#stack",
+    kind: "page",
+    icon: <LayersIcon />,
+  },
+  {
     title: "Experience",
     href: "/#experience",
     kind: "page",
@@ -115,12 +121,6 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     href: "/#projects",
     kind: "page",
     icon: <BoxIcon />,
-  },
-  {
-    title: "Stack",
-    href: "/#stack",
-    kind: "page",
-    icon: <LayersIcon />,
   },
   {
     title: "Honors & Recognition",

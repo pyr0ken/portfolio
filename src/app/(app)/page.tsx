@@ -43,13 +43,13 @@ export default function HomePage() {
           <Hello />
           <Separator />
 
+          <TechStack />
+          <Separator />
+
           <Experiences />
           <Separator />
 
           <Projects />
-          <Separator />
-
-          <TechStack />
           <Separator />
 
           <Recognition />

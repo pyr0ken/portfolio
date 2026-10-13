@@ -18,6 +18,7 @@ import {
   CollapsibleChevronsUpDownIcon,
 } from "@/components/collapsible-animated"
 import { Markdown } from "@/components/markdown"
+import { SkillIcon } from "@/features/portfolio/components/skill-icon"
 
 import type { Project } from "../../types/projects"
 
@@ -106,7 +107,10 @@ export function ProjectItem({
             <ul className="flex flex-wrap gap-1.5">
               {project.skills.map((skill, index) => (
                 <li key={index} className="flex">
-                  <Tag>{skill}</Tag>
+                  <Tag className="gap-1.5 pr-2 pl-1.5">
+                    <SkillIcon skill={skill} />
+                    <span>{skill}</span>
+                  </Tag>
                 </li>
               ))}
             </ul>

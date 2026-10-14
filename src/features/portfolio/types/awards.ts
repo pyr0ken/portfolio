@@ -16,4 +16,6 @@ export type Award = {
   description?: string
   /** Optional URL to certificate, announcement, or reference material. */
   referenceLink?: string
+  /** Whether the award is expanded by default in the UI. */
+  isExpanded?: boolean
 }

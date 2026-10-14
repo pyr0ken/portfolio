@@ -1,12 +1,7 @@
 import { CopyrightIcon, Stamp01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { format } from "date-fns"
-import {
-  ArrowUpRightIcon,
-  CircleCheckBigIcon,
-  CrownIcon,
-  PaperclipIcon,
-} from "lucide-react"
+import { ArrowUpRightIcon, CircleCheckBigIcon, MedalIcon } from "lucide-react"
 
 import {
   CollapsibleContent,
@@ -75,16 +70,29 @@ function AwardRow({ entry }: { entry: AwardRecognition }) {
   const canExpand = !!award.description
 
   return (
-    <Collapsible>
-      {/* Only the title is the trigger (accordion pattern); its overlay keeps
-          the whole row clickable, while the paperclip link sits above it. */}
+    <Collapsible defaultOpen={award.isExpanded ?? true}>
+      {/* If referenceLink is present, title links to it; chevron toggles collapsible */}
       <div className="relative flex items-center hover:bg-accent-muted">
-        <IconTile className="mx-4">{award.icon ?? <CrownIcon />}</IconTile>
+        <IconTile className="mx-4">
+          {award.icon ?? (
+            <MedalIcon className="size-5 text-slate-300 dark:text-slate-200" />
+          )}
+        </IconTile>
 
         <div className="flex flex-1 items-center gap-2 border-l border-dashed border-line p-4">
           <div className="flex-1">
             <h3 className="mb-1 leading-snug font-medium text-balance">
-              {canExpand ? (
+              {award.referenceLink ? (
+                <a
+                  href={award.referenceLink}
+                  target="_blank"
+                  rel="noopener"
+                  className="relative z-10 inline-flex items-center gap-1.5 transition-colors hover:text-foreground hover:underline"
+                >
+                  <span>{award.title}</span>
+                  <ArrowUpRightIcon className="size-3.5 shrink-0 text-muted-foreground" />
+                </a>
+              ) : canExpand ? (
                 <CollapsibleTrigger className="text-left">
                   <span className="absolute inset-0" aria-hidden />
                   {award.title}
@@ -97,8 +105,12 @@ function AwardRow({ entry }: { entry: AwardRecognition }) {
             <dl className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
               <KindTerm kind="award" />
 
-              <div>
+              <div className="flex items-center gap-1">
                 <dt className="sr-only">Prize</dt>
+                <MedalIcon
+                  className="size-3.5 shrink-0 text-slate-400 dark:text-slate-300"
+                  aria-hidden
+                />
                 <dd>{award.prize}</dd>
               </div>
 
@@ -120,26 +132,29 @@ function AwardRow({ entry }: { entry: AwardRecognition }) {
               <TooltipTrigger
                 render={
                   <a
-                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
+                    className="relative z-10 flex size-7 shrink-0 items-center justify-center rounded-md border border-line bg-zinc-900/40 text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-3.5"
                     href={award.referenceLink}
                     target="_blank"
                     rel="noopener"
-                    aria-label="Open reference attachment"
+                    aria-label="Open award project page"
                   >
-                    <PaperclipIcon />
+                    <ArrowUpRightIcon />
                   </a>
                 }
               />
               <TooltipContent>
-                <p>Open reference attachment</p>
+                <p>Open award project page</p>
               </TooltipContent>
             </Tooltip>
           )}
 
           {canExpand && (
-            <div className="shrink-0 text-muted-foreground [&_svg]:size-4">
+            <CollapsibleTrigger
+              className="relative z-10 shrink-0 rounded p-1 text-muted-foreground transition-colors hover:bg-zinc-800 hover:text-foreground [&_svg]:size-4"
+              aria-label="Toggle details"
+            >
               <CollapsibleChevronsUpDownIcon duration={0.15} />
-            </div>
+            </CollapsibleTrigger>
           )}
         </div>
       </div>
@@ -148,6 +163,19 @@ function AwardRow({ entry }: { entry: AwardRecognition }) {
         <CollapsibleContent className="overflow-hidden">
           <div className="typeset typeset-description border-t border-line p-4">
             <Markdown>{award.description}</Markdown>
+            {award.referenceLink && (
+              <div className="mt-3">
+                <a
+                  href={award.referenceLink}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground transition-colors hover:text-foreground hover:underline"
+                >
+                  <span>View official project page on kia-kahroba.ir</span>
+                  <ArrowUpRightIcon className="size-3.5" />
+                </a>
+              </div>
+            )}
           </div>
         </CollapsibleContent>
       )}

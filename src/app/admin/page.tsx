@@ -97,6 +97,8 @@ type PortfolioData = {
     date: string
     grade: string
     description: string
+    referenceLink?: string
+    isExpanded?: boolean
   }>
 }
 
@@ -1037,6 +1039,23 @@ export default function AdminDashboardPage() {
                       className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none"
                     />
                   </div>
+                </div>
+
+                <div className="mt-3">
+                  <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                    Reference / Project Link URL
+                  </label>
+                  <input
+                    type="url"
+                    value={award.referenceLink || ""}
+                    placeholder="https://..."
+                    onChange={(e) => {
+                      const next = [...data.awards]
+                      next[idx].referenceLink = e.target.value
+                      setData({ ...data, awards: next })
+                    }}
+                    className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                  />
                 </div>
               </div>
             ))}

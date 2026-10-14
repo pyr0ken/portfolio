@@ -70,11 +70,11 @@ type ExperienceItem = {
 type EducationItem = {
   id: string
   school: string
-  degree: string
-  fieldOfStudy: string
+  degree?: string
+  fieldOfStudy?: string
   period: { start: string; end?: string }
-  description: string
-  skills: string[]
+  description?: string
+  skills?: string[]
 }
 
 type PortfolioData = {
@@ -946,23 +946,77 @@ export default function AdminDashboardPage() {
                         next[idx].school = e.target.value
                         setData({ ...data, education: next })
                       }}
-                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none"
+                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none focus:border-foreground/40"
                     />
                   </div>
                   <div>
                     <label className="font-mono text-[10px] text-muted-foreground uppercase">
-                      Degree / Major
+                      Degree
                     </label>
                     <input
                       type="text"
-                      value={edu.fieldOfStudy}
+                      placeholder="e.g. Bachelor of Science (B.Sc.)"
+                      value={edu.degree || ""}
+                      onChange={(e) => {
+                        const next = [...data.education]
+                        next[idx].degree = e.target.value
+                        setData({ ...data, education: next })
+                      }}
+                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none focus:border-foreground/40"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                      Field of Study / Major
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Computer Engineering"
+                      value={edu.fieldOfStudy || ""}
                       onChange={(e) => {
                         const next = [...data.education]
                         next[idx].fieldOfStudy = e.target.value
                         setData({ ...data, education: next })
                       }}
-                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none"
+                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none focus:border-foreground/40"
                     />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                      Period (e.g. 2022 - 2026 or 08.2024)
+                    </label>
+                    <div className="mt-1 flex gap-2">
+                      <input
+                        type="text"
+                        placeholder="Start"
+                        value={edu.period?.start ?? ""}
+                        onChange={(e) => {
+                          const next = [...data.education]
+                          const curPeriod = next[idx].period || { start: "" }
+                          next[idx].period = {
+                            ...curPeriod,
+                            start: e.target.value,
+                          }
+                          setData({ ...data, education: next })
+                        }}
+                        className="w-1/2 rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                      />
+                      <input
+                        type="text"
+                        placeholder="End (optional)"
+                        value={edu.period?.end || ""}
+                        onChange={(e) => {
+                          const next = [...data.education]
+                          const curPeriod = next[idx].period || { start: "" }
+                          next[idx].period = {
+                            ...curPeriod,
+                            end: e.target.value || undefined,
+                          }
+                          setData({ ...data, education: next })
+                        }}
+                        className="w-1/2 rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mt-3">
@@ -971,13 +1025,31 @@ export default function AdminDashboardPage() {
                   </label>
                   <textarea
                     rows={2}
-                    value={edu.description}
+                    value={edu.description || ""}
                     onChange={(e) => {
                       const next = [...data.education]
                       next[idx].description = e.target.value
                       setData({ ...data, education: next })
                     }}
-                    className="mt-1 w-full rounded border border-line/60 bg-background/50 p-2 font-mono text-xs outline-none"
+                    className="mt-1 w-full rounded border border-line/60 bg-background/50 p-2 font-mono text-xs outline-none focus:border-foreground/40"
+                  />
+                </div>
+                <div className="mt-3">
+                  <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                    Skills / Coursework Chips (comma-separated)
+                  </label>
+                  <input
+                    type="text"
+                    value={edu.skills?.join(", ") || ""}
+                    onChange={(e) => {
+                      const next = [...data.education]
+                      next[idx].skills = e.target.value
+                        .split(",")
+                        .map((s) => s.trim())
+                        .filter(Boolean)
+                      setData({ ...data, education: next })
+                    }}
+                    className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
                   />
                 </div>
               </div>

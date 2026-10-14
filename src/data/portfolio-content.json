@@ -17,6 +17,37 @@
   },
   "experiences": [
     {
+      "id": "ashtangayogahome",
+      "companyName": "Ashtanga Yoga Home",
+      "companyWebsite": "https://ashtangayogahome.com",
+      "location": "Finland",
+      "locationType": "Remote",
+      "isCurrentEmployer": false,
+      "positions": [
+        {
+          "id": "ashtanga-be",
+          "title": "Backend Developer",
+          "employmentPeriod": {
+            "start": "07.2023",
+            "end": "08.2024"
+          },
+          "employmentType": "Freelance",
+          "description": "- Developed a booking and CRM system using Django Rest Framework (MVC) with class scheduling, user auth, and subscription packages.\n- Integrated secure payment gateways via webhooks and built a ticketing system—prevented double-booking using PostgreSQL transactions.\n- Improved database performance by 25% through indexing, optimized SQL, and caching.\n- Documented all endpoints with Swagger and created onboarding guides for frontend teams.",
+          "skills": [
+            "Python",
+            "Django REST Framework",
+            "PostgreSQL",
+            "Redis",
+            "Webhooks",
+            "SQL",
+            "Transactions",
+            "Swagger"
+          ],
+          "isExpanded": true
+        }
+      ]
+    },
+    {
       "id": "mehrsunai",
       "companyName": "MehrsunAi",
       "companyWebsite": "https://mehrsunai.com",
@@ -45,37 +76,6 @@
             "Prometheus",
             "Grafana",
             "ELK"
-          ],
-          "isExpanded": true
-        }
-      ]
-    },
-    {
-      "id": "ashtangayogahome",
-      "companyName": "Ashtanga Yoga Home",
-      "companyWebsite": "https://ashtangayogahome.com",
-      "location": "Finland",
-      "locationType": "Remote",
-      "isCurrentEmployer": false,
-      "positions": [
-        {
-          "id": "ashtanga-be",
-          "title": "Backend Developer",
-          "employmentPeriod": {
-            "start": "07.2023",
-            "end": "08.2024"
-          },
-          "employmentType": "Freelance",
-          "description": "- Developed a booking and CRM system using Django Rest Framework (MVC) with class scheduling, user auth, and subscription packages.\n- Integrated secure payment gateways via webhooks and built a ticketing system—prevented double-booking using PostgreSQL transactions.\n- Improved database performance by 25% through indexing, optimized SQL, and caching.\n- Documented all endpoints with Swagger and created onboarding guides for frontend teams.",
-          "skills": [
-            "Python",
-            "Django REST Framework",
-            "PostgreSQL",
-            "Redis",
-            "Webhooks",
-            "SQL",
-            "Transactions",
-            "Swagger"
           ],
           "isExpanded": true
         }

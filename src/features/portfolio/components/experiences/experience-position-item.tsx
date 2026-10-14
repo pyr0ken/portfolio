@@ -14,13 +14,18 @@ import {
   CollapsibleChevronsUpDownIcon,
 } from "@/components/collapsible-animated"
 import { Markdown } from "@/components/markdown"
+import { CountryFlag } from "@/features/portfolio/components/country-flag"
 import { SkillIcon } from "@/features/portfolio/components/skill-icon"
 import type { ExperiencePosition } from "@/features/portfolio/types/experiences"
 
 export function ExperiencePositionItem({
   position,
+  location,
+  locationType,
 }: {
   position: ExperiencePosition
+  location?: string
+  locationType?: string
 }) {
   const { start, end } = position.employmentPeriod
   const isOngoing = !end
@@ -55,7 +60,33 @@ export function ExperiencePositionItem({
         </div>
 
         {/* Separators are aria-hidden: a dl may only expose dt/dd groups, and these dividers are decorative. */}
-        <dl className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+        <dl className="flex flex-wrap items-center gap-2 pl-9 text-sm text-muted-foreground">
+          {location && (
+            <>
+              <div className="flex items-center gap-1.5">
+                <dt className="sr-only">Location</dt>
+                <CountryFlag
+                  location={location}
+                  className="h-3 w-4 shrink-0 rounded-[2px]"
+                />
+                <dd className="truncate">
+                  {location}
+                  {locationType && (
+                    <span className="text-muted-foreground/80">
+                      {" "}
+                      ({locationType})
+                    </span>
+                  )}
+                </dd>
+              </div>
+              <Separator
+                className="data-vertical:h-4 data-vertical:self-center"
+                orientation="vertical"
+                aria-hidden
+              />
+            </>
+          )}
+
           {position.employmentType && (
             <>
               <div>

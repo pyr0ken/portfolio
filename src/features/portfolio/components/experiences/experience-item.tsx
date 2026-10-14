@@ -32,7 +32,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
           )}
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col gap-x-3 gap-y-1 pr-1 sm:flex-row sm:items-baseline sm:justify-between">
+        <div className="flex min-w-0 flex-1 items-center justify-between gap-3 pr-1">
           <h3 className="text-xl/6 font-medium">
             {experience.companyWebsite ? (
               <a
@@ -48,34 +48,27 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
             )}
           </h3>
 
-          {experience.location && experience.locationType && (
-            <dl className="flex min-w-0 items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground">
-              <dt className="sr-only">Location</dt>
-              <dd className="truncate">{experience.location}</dd>
-
-              <dt className="sr-only">Location type</dt>
-              <dd>({experience.locationType})</dd>
-
-              {experience.isCurrentEmployer && (
-                <>
-                  <dt className="sr-only">Employment status</dt>
-                  <dd>
-                    <span className="sr-only">Current</span>
-                    <span className="relative flex size-2.5 translate-px items-center justify-center">
-                      <span className="absolute inline-flex size-2.5 animate-ping rounded-full bg-info opacity-50" />
-                      <span className="relative inline-flex size-1.5 rounded-full bg-info" />
-                    </span>
-                  </dd>
-                </>
-              )}
-            </dl>
+          {experience.isCurrentEmployer && (
+            <span
+              className="relative flex size-2.5 translate-px items-center justify-center"
+              title="Current employer"
+            >
+              <span className="sr-only">Current employer</span>
+              <span className="absolute inline-flex size-2.5 animate-ping rounded-full bg-info opacity-50" />
+              <span className="relative inline-flex size-1.5 rounded-full bg-info" />
+            </span>
           )}
         </div>
       </div>
 
       <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
         {experience.positions.map((position) => (
-          <ExperiencePositionItem key={position.id} position={position} />
+          <ExperiencePositionItem
+            key={position.id}
+            position={position}
+            location={experience.location}
+            locationType={experience.locationType}
+          />
         ))}
       </div>
     </div>

@@ -1,24 +1,16 @@
 {
-  "name": "chanhdai.com",
+  "name": "portfolio",
   "version": "0.1.0",
-  "description": "A pixel-perfect dev portfolio and shadcn registry.",
-  "homepage": "https://chanhdai.com",
+  "description": "Backend & DevOps Software Engineer portfolio and systems showcase.",
+  "homepage": "https://pyr0ken.ir",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Mohammad Hossein Yaghoubi",
+    "url": "https://github.com/pyr0ken"
   },
-  "contributors": [
-    {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/pyr0ken/portfolio.git"
   },
   "scripts": {
     "dev": "next dev",

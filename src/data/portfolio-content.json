@@ -203,7 +203,7 @@
       "degree": "Bachelor of Science (B.Sc.)",
       "fieldOfStudy": "Computer Engineering",
       "period": {
-        "start": "2022",
+        "start": "2025",
         "end": "2026"
       },
       "description": "- Undergraduate student in Computer Engineering at Kharazmi University, Tehran, Iran.\n- In-depth coursework in Distributed Systems, Operating Systems, Computer Networks, and Database Systems.",
@@ -225,7 +225,7 @@
       "fieldOfStudy": "Python Programming Instructor",
       "period": {
         "start": "08.2024",
-        "end": "08.2024"
+        "end": "09.2024"
       },
       "description": "- Conducted specialized Python programming training sessions for engineering students.\n- Covered algorithmic thinking, data structures, and foundational software engineering methodologies.",
       "skills": [

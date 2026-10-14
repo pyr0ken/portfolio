@@ -10,6 +10,7 @@ import {
   DownloadIcon,
   FolderGit2Icon,
   GraduationCapIcon,
+  LayersIcon,
   Loader2Icon,
   LogOutIcon,
   PlusIcon,
@@ -17,6 +18,24 @@ import {
   Trash2Icon,
   UserIcon,
 } from "lucide-react"
+
+import { SkillIcon } from "@/features/portfolio/components/skill-icon"
+
+type TechStackItem = {
+  key: string
+  title: string
+  href: string
+  categories: string[]
+}
+
+const DEFAULT_STACK_CATEGORIES = [
+  "Backend & APIs",
+  "Databases & Queues",
+  "DevOps & Cloud",
+  "Observability & Monitoring",
+  "Systems & Languages",
+  "Frontend & 3D",
+]
 
 type ProjectItem = {
   id: string
@@ -69,6 +88,7 @@ type PortfolioData = {
   }
   projects: ProjectItem[]
   experiences: ExperienceItem[]
+  techStack?: TechStackItem[]
   education: EducationItem[]
   awards: Array<{
     id: string
@@ -86,7 +106,7 @@ export default function AdminDashboardPage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [activeTab, setActiveTab] = useState<
-    "projects" | "experiences" | "education" | "profile"
+    "projects" | "experiences" | "stack" | "education" | "profile"
   >("projects")
   const [message, setMessage] = useState<{
     text: string
@@ -157,6 +177,55 @@ export default function AdminDashboardPage() {
     a.download = `pyr0ken-portfolio-${new Date().toISOString().split("T")[0]}.json`
     a.click()
     URL.revokeObjectURL(url)
+  }
+
+  // Tech Stack helpers
+  const moveTechStack = (index: number, direction: "up" | "down") => {
+    if (!data || !data.techStack) return
+    const targetIndex = direction === "up" ? index - 1 : index + 1
+    if (targetIndex < 0 || targetIndex >= data.techStack.length) return
+
+    const newStack = [...data.techStack]
+    const [moved] = newStack.splice(index, 1)
+    newStack.splice(targetIndex, 0, moved)
+
+    setData({ ...data, techStack: newStack })
+  }
+
+  const deleteTechStack = (key: string) => {
+    if (!data || !data.techStack) return
+    if (!confirm("Are you sure you want to delete this technology?")) return
+    setData({
+      ...data,
+      techStack: data.techStack.filter((s) => s.key !== key),
+    })
+  }
+
+  const addTechStack = (category = "Backend & APIs") => {
+    if (!data) return
+    const currentStack = data.techStack || []
+    const newKey = `tech-${Date.now()}`
+    const newItem: TechStackItem = {
+      key: newKey,
+      title: "New Technology",
+      href: "https://",
+      categories: [category],
+    }
+    setData({
+      ...data,
+      techStack: [newItem, ...currentStack],
+    })
+  }
+
+  const updateTechStack = (
+    index: number,
+    field: keyof TechStackItem,
+    value: string | string[]
+  ) => {
+    if (!data || !data.techStack) return
+    const newStack = [...data.techStack]
+    newStack[index] = { ...newStack[index], [field]: value }
+    setData({ ...data, techStack: newStack })
   }
 
   // Projects helpers
@@ -300,15 +369,15 @@ export default function AdminDashboardPage() {
       <div className="flex gap-1 overflow-x-auto border-b border-line pb-px">
         <button
           type="button"
-          onClick={() => setActiveTab("projects")}
+          onClick={() => setActiveTab("stack")}
           className={`flex items-center gap-2 border-b-2 px-4 py-2.5 text-xs font-medium whitespace-nowrap transition-colors ${
-            activeTab === "projects"
+            activeTab === "stack"
               ? "border-foreground text-foreground"
               : "border-transparent text-muted-foreground hover:text-foreground"
           }`}
         >
-          <FolderGit2Icon className="size-4" />
-          <span>Projects ({data.projects.length})</span>
+          <LayersIcon className="size-4" />
+          <span>Tech Stack ({(data.techStack || []).length})</span>
         </button>
 
         <button
@@ -322,6 +391,19 @@ export default function AdminDashboardPage() {
         >
           <BriefcaseIcon className="size-4" />
           <span>Experience ({data.experiences.length})</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActiveTab("projects")}
+          className={`flex items-center gap-2 border-b-2 px-4 py-2.5 text-xs font-medium whitespace-nowrap transition-colors ${
+            activeTab === "projects"
+              ? "border-foreground text-foreground"
+              : "border-transparent text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <FolderGit2Icon className="size-4" />
+          <span>Projects ({data.projects.length})</span>
         </button>
 
         <button
@@ -350,6 +432,129 @@ export default function AdminDashboardPage() {
           <span>Profile & Bio</span>
         </button>
       </div>
+
+      {/* Tab: TECH STACK */}
+      {activeTab === "stack" && (
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs text-muted-foreground">
+              Manage tech stack technologies, official links, and categories.
+              Items render on the homepage with brand icons.
+            </p>
+            <button
+              type="button"
+              onClick={() => addTechStack()}
+              className="flex items-center gap-1.5 rounded-lg border border-line bg-zinc-900/60 px-3 py-1.5 font-mono text-xs transition-colors hover:border-foreground/30 hover:text-foreground"
+            >
+              <PlusIcon className="size-3.5" />
+              <span>Add Technology</span>
+            </button>
+          </div>
+
+          <div className="space-y-3">
+            {(data.techStack || []).map((tech, idx) => (
+              <div
+                key={tech.key || idx}
+                className="rounded-xl border border-line bg-card/40 p-4 transition-colors hover:border-line/80"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line/60 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-mono text-xs text-muted-foreground">
+                      #{idx + 1}
+                    </span>
+                    <div className="flex size-7 items-center justify-center rounded-lg border border-line/60 bg-background/80 text-foreground">
+                      <SkillIcon skill={tech.title} className="size-4" />
+                    </div>
+                    <input
+                      type="text"
+                      value={tech.title}
+                      placeholder="e.g. Python, Docker, Redis"
+                      onChange={(e) =>
+                        updateTechStack(idx, "title", e.target.value)
+                      }
+                      className="rounded border border-line/60 bg-background/50 px-2.5 py-1 text-sm font-semibold outline-none focus:border-foreground/40"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    <button
+                      type="button"
+                      disabled={idx === 0}
+                      onClick={() => moveTechStack(idx, "up")}
+                      className="rounded p-1.5 text-muted-foreground hover:bg-zinc-800 hover:text-foreground disabled:opacity-20"
+                      title="Move Up"
+                    >
+                      <ArrowUpIcon className="size-4" />
+                    </button>
+                    <button
+                      type="button"
+                      disabled={idx === (data.techStack?.length || 0) - 1}
+                      onClick={() => moveTechStack(idx, "down")}
+                      className="rounded p-1.5 text-muted-foreground hover:bg-zinc-800 hover:text-foreground disabled:opacity-20"
+                      title="Move Down"
+                    >
+                      <ArrowDownIcon className="size-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => deleteTechStack(tech.key)}
+                      className="rounded p-1.5 text-muted-foreground hover:bg-red-950/40 hover:text-red-400"
+                      title="Delete"
+                    >
+                      <Trash2Icon className="size-4" />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="grid gap-3 pt-3 sm:grid-cols-2">
+                  <div className="space-y-1">
+                    <label className="font-mono text-[11px] text-muted-foreground">
+                      Website / Docs URL
+                    </label>
+                    <input
+                      type="url"
+                      value={tech.href}
+                      placeholder="https://..."
+                      onChange={(e) =>
+                        updateTechStack(idx, "href", e.target.value)
+                      }
+                      className="w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="font-mono text-[11px] text-muted-foreground">
+                      Category
+                    </label>
+                    <div className="flex gap-1.5">
+                      <select
+                        value={tech.categories?.[0] || ""}
+                        onChange={(e) =>
+                          updateTechStack(idx, "categories", [e.target.value])
+                        }
+                        className="w-full rounded border border-line/60 bg-background px-2.5 py-1 text-xs outline-none focus:border-foreground/40"
+                      >
+                        {DEFAULT_STACK_CATEGORIES.map((cat) => (
+                          <option key={cat} value={cat}>
+                            {cat}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {(!data.techStack || data.techStack.length === 0) && (
+              <div className="rounded-xl border border-dashed border-line p-8 text-center text-sm text-muted-foreground">
+                No technologies in the stack yet. Click &quot;Add
+                Technology&quot; to start.
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Tab: PROJECTS */}
       {activeTab === "projects" && (

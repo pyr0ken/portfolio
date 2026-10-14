@@ -53,7 +53,7 @@ export const MOBILE_NAV: NavItem<Route>[] = [
   ...MAIN_NAV,
 ]
 
-export const X_HANDLE = SOCIAL.x.handle
+export const X_HANDLE = "@pyr0ken"
 export const GITHUB_USERNAME = SOCIAL.github.handle
 export const SOURCE_CODE_GITHUB_REPO = "pyr0ken/portfolio"
 export const SOURCE_CODE_GITHUB_URL = "https://github.com/pyr0ken/portfolio"

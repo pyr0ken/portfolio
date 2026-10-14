@@ -4,12 +4,6 @@ import type { SocialProfile } from "@/features/portfolio/types/social-links"
  * Keyed registry of social profiles — the single source of truth.
  */
 export const SOCIAL = {
-  x: {
-    title: "X",
-    handle: "@pyr0ken",
-    href: "https://x.com/pyr0ken",
-    sameAs: true,
-  },
   github: {
     title: "GitHub",
     handle: "pyr0ken",

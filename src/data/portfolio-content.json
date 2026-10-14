@@ -248,5 +248,215 @@
       "grade": "National",
       "description": "- Field: Computer Science & Systems Engineering\n- Awarded Silver Medal at the National Innovation Award for excellence in computer engineering and software architecture."
     }
+  ],
+  "techStack": [
+    {
+      "key": "python",
+      "title": "Python",
+      "href": "https://www.python.org",
+      "categories": [
+        "Backend & APIs"
+      ]
+    },
+    {
+      "key": "fastapi",
+      "title": "FastAPI",
+      "href": "https://fastapi.tiangolo.com",
+      "categories": [
+        "Backend & APIs"
+      ]
+    },
+    {
+      "key": "django",
+      "title": "Django",
+      "href": "https://www.djangoproject.com",
+      "categories": [
+        "Backend & APIs"
+      ]
+    },
+    {
+      "key": "drf",
+      "title": "Django REST Framework",
+      "href": "https://www.django-rest-framework.org",
+      "categories": [
+        "Backend & APIs"
+      ]
+    },
+    {
+      "key": "rest",
+      "title": "RESTful APIs / OpenAPI",
+      "href": "https://www.openapis.org",
+      "categories": [
+        "Backend & APIs"
+      ]
+    },
+    {
+      "key": "postgresql",
+      "title": "PostgreSQL",
+      "href": "https://www.postgresql.org",
+      "categories": [
+        "Databases & Queues"
+      ]
+    },
+    {
+      "key": "redis",
+      "title": "Redis",
+      "href": "https://redis.io",
+      "categories": [
+        "Databases & Queues"
+      ]
+    },
+    {
+      "key": "rabbitmq",
+      "title": "RabbitMQ",
+      "href": "https://www.rabbitmq.com",
+      "categories": [
+        "Databases & Queues"
+      ]
+    },
+    {
+      "key": "celery",
+      "title": "Celery",
+      "href": "https://docs.celeryq.dev",
+      "categories": [
+        "Databases & Queues"
+      ]
+    },
+    {
+      "key": "sqlcipher",
+      "title": "SQLite & SQLCipher",
+      "href": "https://www.zetetic.net/sqlcipher",
+      "categories": [
+        "Databases & Queues"
+      ]
+    },
+    {
+      "key": "docker",
+      "title": "Docker",
+      "href": "https://www.docker.com",
+      "categories": [
+        "DevOps & Cloud"
+      ]
+    },
+    {
+      "key": "kubernetes",
+      "title": "Kubernetes",
+      "href": "https://kubernetes.io",
+      "categories": [
+        "DevOps & Cloud"
+      ]
+    },
+    {
+      "key": "linux",
+      "title": "Linux & Shell",
+      "href": "https://www.kernel.org",
+      "categories": [
+        "DevOps & Cloud"
+      ]
+    },
+    {
+      "key": "cicd",
+      "title": "CI/CD (GitHub Actions / GitLab)",
+      "href": "https://github.com/features/actions",
+      "categories": [
+        "DevOps & Cloud"
+      ]
+    },
+    {
+      "key": "nginx",
+      "title": "NGINX",
+      "href": "https://nginx.org",
+      "categories": [
+        "DevOps & Cloud"
+      ]
+    },
+    {
+      "key": "prometheus",
+      "title": "Prometheus",
+      "href": "https://prometheus.io",
+      "categories": [
+        "Observability & Monitoring"
+      ]
+    },
+    {
+      "key": "grafana",
+      "title": "Grafana",
+      "href": "https://grafana.com",
+      "categories": [
+        "Observability & Monitoring"
+      ]
+    },
+    {
+      "key": "elk",
+      "title": "ELK Stack",
+      "href": "https://www.elastic.co/what-is/elk-stack",
+      "categories": [
+        "Observability & Monitoring"
+      ]
+    },
+    {
+      "key": "rust",
+      "title": "Rust",
+      "href": "https://www.rust-lang.org",
+      "categories": [
+        "Systems & Languages"
+      ]
+    },
+    {
+      "key": "kotlin",
+      "title": "Kotlin",
+      "href": "https://kotlinlang.org",
+      "categories": [
+        "Systems & Languages"
+      ]
+    },
+    {
+      "key": "sql",
+      "title": "SQL",
+      "href": "https://en.wikipedia.org/wiki/SQL",
+      "categories": [
+        "Systems & Languages"
+      ]
+    },
+    {
+      "key": "typescript",
+      "title": "TypeScript",
+      "href": "https://www.typescriptlang.org",
+      "categories": [
+        "Systems & Languages"
+      ]
+    },
+    {
+      "key": "react",
+      "title": "React",
+      "href": "https://react.dev",
+      "categories": [
+        "Frontend & 3D"
+      ]
+    },
+    {
+      "key": "tailwind",
+      "title": "Tailwind CSS",
+      "href": "https://tailwindcss.com",
+      "categories": [
+        "Frontend & 3D"
+      ]
+    },
+    {
+      "key": "threejs",
+      "title": "Three.js",
+      "href": "https://threejs.org",
+      "categories": [
+        "Frontend & 3D"
+      ]
+    },
+    {
+      "key": "r3f",
+      "title": "React Three Fiber",
+      "href": "https://r3f.docs.pmnd.rs",
+      "categories": [
+        "Frontend & 3D"
+      ]
+    }
   ]
 }

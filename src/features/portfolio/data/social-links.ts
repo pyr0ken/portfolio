@@ -16,6 +16,18 @@ export const SOCIAL = {
     href: "https://www.linkedin.com/in/mohammad-hossein-yaghoubi/",
     sameAs: true,
   },
+  telegram: {
+    title: "Telegram",
+    handle: "pyr0ken",
+    href: "https://t.me/pyr0ken",
+    sameAs: true,
+  },
+  huggingface: {
+    title: "Hugging Face",
+    handle: "pyr0ken",
+    href: "https://huggingface.co/pyr0ken",
+    sameAs: true,
+  },
 } satisfies Record<string, SocialProfile>
 
 export type SocialName = keyof typeof SOCIAL

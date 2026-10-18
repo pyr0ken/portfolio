@@ -1,4 +1,9 @@
-import { GitHubIcon, LinkedInIcon } from "@/components/icons"
+import {
+  GitHubIcon,
+  HuggingFaceIcon,
+  LinkedInIcon,
+  TelegramIcon,
+} from "@/components/icons"
 import type { SocialName } from "@/features/portfolio/data/social-links"
 
 /**
@@ -9,4 +14,6 @@ import type { SocialName } from "@/features/portfolio/data/social-links"
 export const SOCIAL_ICONS: Record<SocialName, React.JSX.Element> = {
   github: <GitHubIcon />,
   linkedin: <LinkedInIcon />,
+  telegram: <TelegramIcon />,
+  huggingface: <HuggingFaceIcon />,
 }

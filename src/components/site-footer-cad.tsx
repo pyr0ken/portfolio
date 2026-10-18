@@ -5,7 +5,13 @@ import type { BuildInfo } from "@/lib/build-info"
 import { getBuildInfo, getStack } from "@/lib/build-info"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
-import { DmcaIcon, GitHubIcon, LinkedInIcon } from "@/components/icons"
+import {
+  DmcaIcon,
+  GitHubIcon,
+  HuggingFaceIcon,
+  LinkedInIcon,
+  TelegramIcon,
+} from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
@@ -40,6 +46,8 @@ const SITE_SUBTITLE = packageJson.description
 export function SiteFooterCad() {
   const githubLink = SOCIAL.github
   const linkedinLink = SOCIAL.linkedin
+  const telegramLink = SOCIAL.telegram
+  const huggingfaceLink = SOCIAL.huggingface
 
   const build = getBuildInfo()
   const stack = getStack()
@@ -219,6 +227,36 @@ export function SiteFooterCad() {
             aria-label="LinkedIn Profile"
           >
             <LinkedInIcon className="size-4" />
+          </a>
+
+          <Separator
+            orientation="vertical"
+            className="data-vertical:h-4 data-vertical:self-center"
+          />
+
+          <a
+            className="flex items-center transition-[color] hover:text-foreground"
+            href={telegramLink.href}
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram Profile"
+          >
+            <TelegramIcon className="size-4" />
+          </a>
+
+          <Separator
+            orientation="vertical"
+            className="data-vertical:h-4 data-vertical:self-center"
+          />
+
+          <a
+            className="flex items-center transition-[color] hover:text-foreground"
+            href={huggingfaceLink.href}
+            target="_blank"
+            rel="noopener"
+            aria-label="Hugging Face Profile"
+          >
+            <HuggingFaceIcon className="size-4" />
           </a>
 
           <Separator

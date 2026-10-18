@@ -1,12 +1,20 @@
 import { LICENSE, SOURCE_CODE_GITHUB_URL } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { DmcaIcon, GitHubIcon, LinkedInIcon } from "@/components/icons"
+import {
+  DmcaIcon,
+  GitHubIcon,
+  HuggingFaceIcon,
+  LinkedInIcon,
+  TelegramIcon,
+} from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 export function SiteFooter() {
   const githubLink = SOCIAL.github
   const linkedinLink = SOCIAL.linkedin
+  const telegramLink = SOCIAL.telegram
+  const huggingfaceLink = SOCIAL.huggingface
 
   return (
     <footer className="max-w-screen overflow-x-clip px-2">
@@ -120,6 +128,30 @@ export function SiteFooter() {
               aria-label="LinkedIn Profile"
             >
               <LinkedInIcon className="size-4" />
+            </a>
+
+            <Separator />
+
+            <a
+              className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
+              href={telegramLink.href}
+              target="_blank"
+              rel="noopener"
+              aria-label="Telegram Profile"
+            >
+              <TelegramIcon className="size-4" />
+            </a>
+
+            <Separator />
+
+            <a
+              className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
+              href={huggingfaceLink.href}
+              target="_blank"
+              rel="noopener"
+              aria-label="Hugging Face Profile"
+            >
+              <HuggingFaceIcon className="size-4" />
             </a>
 
             <Separator />

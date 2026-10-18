@@ -5,6 +5,8 @@ A high-performance personal portfolio and systems engineering showcase for **Moh
 [![Live Website](https://img.shields.io/badge/Website-pyr0ken.ir-black?style=flat&logo=vercel)](https://pyr0ken.ir)
 [![GitHub](https://img.shields.io/badge/GitHub-pyr0ken-181717?style=flat&logo=github)](https://github.com/pyr0ken)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Mohammad_Hossein_Yaghoubi-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/mohammad-hossein-yaghoubi/)
+[![Telegram](https://img.shields.io/badge/Telegram-pyr0ken-26A5E4?style=flat&logo=telegram)](https://t.me/pyr0ken)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-pyr0ken-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/pyr0ken)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 ---

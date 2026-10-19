@@ -7,7 +7,7 @@ import { USER } from "@/features/portfolio/data/user"
 export const SITE_INFO = {
   name: USER.displayName,
   url: process.env.NEXT_PUBLIC_APP_URL || "https://pyr0ken.ir",
-  ogImage: USER.ogImage,
+  ogImage: `/og/simple?title=${encodeURIComponent(USER.displayName)}&description=${encodeURIComponent(USER.jobTitle)}`,
   description: USER.bio,
   keywords: USER.keywords,
 }

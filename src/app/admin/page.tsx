@@ -77,6 +77,15 @@ type EducationItem = {
   skills?: string[]
 }
 
+type TeachingItem = {
+  id: string
+  institution: string
+  role: string
+  period: { start: string; end?: string }
+  description?: string
+  skills?: string[]
+}
+
 type PortfolioData = {
   user: {
     displayName: string
@@ -90,6 +99,7 @@ type PortfolioData = {
   experiences: ExperienceItem[]
   techStack?: TechStackItem[]
   education: EducationItem[]
+  teaching?: TeachingItem[]
   awards: Array<{
     id: string
     prize: string
@@ -418,7 +428,7 @@ export default function AdminDashboardPage() {
           }`}
         >
           <GraduationCapIcon className="size-4" />
-          <span>Education & Honors</span>
+          <span>Education, Teaching & Honors</span>
         </button>
 
         <button
@@ -1048,6 +1058,161 @@ export default function AdminDashboardPage() {
                         .map((s) => s.trim())
                         .filter(Boolean)
                       setData({ ...data, education: next })
+                    }}
+                    className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-4 border-t border-line pt-4">
+            <div className="flex items-center justify-between">
+              <h3 className="font-mono text-xs text-muted-foreground uppercase">
+                Teaching & Mentorship Entries
+              </h3>
+              <button
+                type="button"
+                onClick={() => {
+                  const newTeaching: TeachingItem = {
+                    id: `teaching-${Date.now()}`,
+                    institution: "University / Institution Name",
+                    role: "Python Programming Instructor",
+                    period: { start: new Date().getFullYear().toString() },
+                    description: "- Conducted technical training sessions...",
+                    skills: ["Python", "Teaching & Mentorship"],
+                  }
+                  setData({
+                    ...data,
+                    teaching: [...(data.teaching || []), newTeaching],
+                  })
+                }}
+                className="flex items-center gap-1.5 rounded-lg border border-line bg-zinc-900/60 px-2.5 py-1 font-mono text-[11px] transition-colors hover:border-foreground/30 hover:text-foreground"
+              >
+                <PlusIcon className="size-3" />
+                <span>Add Teaching</span>
+              </button>
+            </div>
+            {(data.teaching || []).map((tch, idx) => (
+              <div
+                key={tch.id}
+                className="rounded-xl border border-line bg-card/40 p-4"
+              >
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                      Institution / University
+                    </label>
+                    <input
+                      type="text"
+                      value={tch.institution}
+                      onChange={(e) => {
+                        const next = [...(data.teaching || [])]
+                        next[idx].institution = e.target.value
+                        setData({ ...data, teaching: next })
+                      }}
+                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none focus:border-foreground/40"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                      Role / Title
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Python Programming Instructor"
+                      value={tch.role}
+                      onChange={(e) => {
+                        const next = [...(data.teaching || [])]
+                        next[idx].role = e.target.value
+                        setData({ ...data, teaching: next })
+                      }}
+                      className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 text-xs outline-none focus:border-foreground/40"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                      Period (e.g. 08.2024 - 09.2024)
+                    </label>
+                    <div className="mt-1 flex gap-2">
+                      <input
+                        type="text"
+                        placeholder="Start"
+                        value={tch.period?.start ?? ""}
+                        onChange={(e) => {
+                          const next = [...(data.teaching || [])]
+                          const curPeriod = next[idx].period || { start: "" }
+                          next[idx].period = {
+                            ...curPeriod,
+                            start: e.target.value,
+                          }
+                          setData({ ...data, teaching: next })
+                        }}
+                        className="w-1/2 rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                      />
+                      <input
+                        type="text"
+                        placeholder="End (optional)"
+                        value={tch.period?.end || ""}
+                        onChange={(e) => {
+                          const next = [...(data.teaching || [])]
+                          const curPeriod = next[idx].period || { start: "" }
+                          next[idx].period = {
+                            ...curPeriod,
+                            end: e.target.value || undefined,
+                          }
+                          setData({ ...data, teaching: next })
+                        }}
+                        className="w-1/2 rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-end justify-end">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (!confirm("Delete this teaching entry?")) return
+                        const next = (data.teaching || []).filter(
+                          (_, i) => i !== idx
+                        )
+                        setData({ ...data, teaching: next })
+                      }}
+                      className="flex items-center gap-1 text-xs text-red-400 hover:text-red-300"
+                    >
+                      <Trash2Icon className="size-3.5" />
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                    Description
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={tch.description || ""}
+                    onChange={(e) => {
+                      const next = [...(data.teaching || [])]
+                      next[idx].description = e.target.value
+                      setData({ ...data, teaching: next })
+                    }}
+                    className="mt-1 w-full rounded border border-line/60 bg-background/50 p-2 font-mono text-xs outline-none focus:border-foreground/40"
+                  />
+                </div>
+                <div className="mt-3">
+                  <label className="font-mono text-[10px] text-muted-foreground uppercase">
+                    Skills / Coursework Chips (comma-separated)
+                  </label>
+                  <input
+                    type="text"
+                    value={tch.skills?.join(", ") || ""}
+                    onChange={(e) => {
+                      const next = [...(data.teaching || [])]
+                      next[idx].skills = e.target.value
+                        .split(",")
+                        .map((s) => s.trim())
+                        .filter(Boolean)
+                      setData({ ...data, teaching: next })
                     }}
                     className="mt-1 w-full rounded border border-line/60 bg-background/50 px-2.5 py-1 font-mono text-xs outline-none focus:border-foreground/40"
                   />

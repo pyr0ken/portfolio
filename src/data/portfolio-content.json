@@ -217,12 +217,13 @@
         "Software Engineering"
       ],
       "isExpanded": true
-    },
+    }
+  ],
+  "teaching": [
     {
       "id": "cmu-teaching",
-      "school": "Chabahar University of Maritime and Marine Sciences",
-      "degree": "Teaching Experience",
-      "fieldOfStudy": "Python Programming Instructor",
+      "institution": "Chabahar University of Maritime and Marine Sciences",
+      "role": "Python Programming Instructor",
       "period": {
         "start": "08.2024",
         "end": "09.2024"
@@ -234,7 +235,7 @@
         "Data Structures",
         "Teaching & Mentorship"
       ],
-      "isExpanded": false
+      "isExpanded": true
     }
   ],
   "awards": [

@@ -15,6 +15,7 @@ import { ProfileHeader } from "@/features/portfolio/components/profile-header"
 import { Projects } from "@/features/portfolio/components/projects"
 import { Recognition } from "@/features/portfolio/components/recognition"
 import { SocialLinks } from "@/features/portfolio/components/social-links"
+import { Teaching } from "@/features/portfolio/components/teaching"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
 import { USER } from "@/features/portfolio/data/user"
 
@@ -56,6 +57,9 @@ export default function HomePage() {
           <Separator />
 
           <Education />
+          <Separator />
+
+          <Teaching />
         </div>
       </div>
     </>

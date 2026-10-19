@@ -19,6 +19,7 @@ import {
   LineChartIcon,
   MonitorIcon,
   MoonStarIcon,
+  PresentationIcon,
   QuoteIcon,
   RssIcon,
   SquareDashedIcon,
@@ -133,6 +134,12 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     href: "/#education",
     kind: "page",
     icon: <GraduationCapIcon />,
+  },
+  {
+    title: "Teaching & Mentorship",
+    href: "/#teaching",
+    kind: "page",
+    icon: <PresentationIcon />,
   },
 ]
 

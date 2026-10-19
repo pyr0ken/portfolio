@@ -25,18 +25,36 @@ export async function GET(request: Request) {
       <div tw="absolute inset-x-0 top-12 flex h-px border border-zinc-800" />
       <div tw="absolute inset-x-0 bottom-12 flex h-px border border-zinc-800" />
 
-      <div tw="absolute top-18 left-18 flex">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 256"
-          width={128}
-          height={64}
-        >
-          <path
-            fill="currentColor"
-            d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
-          />
-        </svg>
+      {/* Header bar with 0x mark and live domain badge */}
+      <div tw="absolute top-18 left-18 right-18 flex justify-between items-center">
+        <div tw="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 256"
+            width={128}
+            height={64}
+          >
+            <path
+              fill="currentColor"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M 64 48 H 208 V 208 H 64 Z M 108 88 H 164 V 168 H 108 Z M 280 48 L 336 48 L 364 96 L 392 48 L 448 48 L 396 128 L 448 208 L 392 208 L 364 160 L 336 208 L 280 208 L 332 128 Z"
+            />
+          </svg>
+        </div>
+
+        <div tw="flex items-center border border-zinc-800 bg-zinc-900/80 px-4 py-2 rounded-lg">
+          <div tw="w-2.5 h-2.5 rounded-full bg-emerald-500 mr-2.5" />
+          <span
+            style={{
+              fontFamily: "GeistMono",
+              fontSize: 18,
+              color: "#e4e4e7",
+            }}
+          >
+            pyr0ken.ir
+          </span>
+        </div>
       </div>
 
       <div tw="absolute inset-x-0 top-40 bottom-24 flex flex-col justify-end border-t-2 border-zinc-800">
@@ -70,6 +88,21 @@ export async function GET(request: Request) {
             </div>
           </div>
         )}
+      </div>
+
+      {/* CAD technical footer */}
+      <div
+        tw="absolute bottom-15 left-18 right-18 flex justify-between items-center text-zinc-500"
+        style={{ fontFamily: "GeistMono", fontSize: 16 }}
+      >
+        <div tw="flex items-center">
+          <span tw="mr-8">SYS: BACKEND & INFRASTRUCTURE</span>
+          <span tw="mr-8">ARCH: HIGH-CONCURRENCY</span>
+          <span>STACK: RUST / FASTAPI / K8S</span>
+        </div>
+        <div tw="flex items-center">
+          <span>SPEC 1200x630</span>
+        </div>
       </div>
     </div>,
     {

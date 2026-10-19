@@ -66,7 +66,9 @@ export async function GET(request: Request) {
         >
           <path
             fill="currentColor"
-            d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M 64 48 H 208 V 208 H 64 Z M 108 88 H 164 V 168 H 108 Z M 280 48 L 336 48 L 364 96 L 392 48 L 448 48 L 396 128 L 448 208 L 392 208 L 364 160 L 336 208 L 280 208 L 332 128 Z"
           />
         </svg>
       </div>
